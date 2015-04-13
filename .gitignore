@@ -1,0 +1,14 @@
+# normal ignores
+.*
+*~
+*.[ao]
+*.lo
+*.so
+tags
+cscope.out
+!.gitignore
+!.travis.yml
+
+#Tom Mac Stuff
+.DS_Store
+
