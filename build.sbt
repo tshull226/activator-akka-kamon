@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
   kamonRepo %% "kamon-akka" % kamonVersion,
   kamonRepo %% "kamon-statsd" % kamonVersion,
   kamonRepo %% "kamon-log-reporter" % kamonVersion,
-  //kamonRepo %% "kamon-system-metrics" % kamonVersion,
+  kamonRepo %% "kamon-system-metrics" % kamonVersion,
 
   "org.aspectj" % "aspectjweaver" % "1.8.5"
 )
