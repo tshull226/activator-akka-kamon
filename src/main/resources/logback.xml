@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <target>System.out</target>
+    <encoder>
+      <pattern>[%level{10}] [%date{ISO8601}] Thread:[%thread] SourceThread:[%X{sourceThread}] AkkaSource:[%X{akkaSource}] %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="akka" level="INFO" />
+  <logger name="traffic_data.kamon" level="DEBUG"/>
+
+  <root level="ALL">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
