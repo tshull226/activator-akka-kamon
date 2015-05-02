@@ -21,4 +21,12 @@ object Main extends App {
   generator ! ConstantLoad(Schedule(numberGenerator, GenerateSecureNumber, 1000))
   generator ! Peak(Schedule(numberGenerator, GenerateNumber, 100000))
   generator ! Peak(Schedule(numberGenerator, GenerateSecureNumber, 25000))
+
+  
+  //sys.addShutdownHook{
+  //  println( "system is shutting down")
+  //}
+  sys.ShutdownHookThread{
+    println( "system is shutting down")
+  }
 }

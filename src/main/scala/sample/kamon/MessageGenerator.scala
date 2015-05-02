@@ -39,6 +39,20 @@ trait MessageGenerator extends Actor with ActorLogging {
 
   def schedule(target: ActorRef, message: Any, times: Int)
 
+  override def postStop(): Unit = {
+    println ("POST STOP WAS CALLED!! ")
+  }
+  def registerOnTermination(): Unit = {
+    println ("ON TERMINATION WAS CALLED!! ")
+  }
+
+  sys.ShutdownHookThread{
+    println( "system is shutting down")
+  }
+  //sys.addShutdownHook{
+  //  println( "system is shutting down")
+  //}
+
 }
 
 /** the protocol */
@@ -48,6 +62,7 @@ object MessageGenerator {
   case class ConstantLoad(schedule: Schedule)
 
   case class Schedule(target: ActorRef, msg: Any, times: Int)
+
 
 }
 
